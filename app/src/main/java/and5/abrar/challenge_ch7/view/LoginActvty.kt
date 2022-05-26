@@ -8,6 +8,7 @@ import and5.abrar.challenge_ch7.R
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import kotlinx.android.synthetic.main.activity_login_actvty.*
@@ -45,8 +46,8 @@ class LoginActvty : AppCompatActivity() {
     }
     private fun loginAuth(listlogin : List<GetDataUserItem>){
         usermanager = UserManager(this)
-        val nama = nama.text.toString()
-        val  password = pass.text.toString()
+        val nama = login_nama.text.toString()
+        val  password = login_pass.text.toString()
         for(i in listlogin.indices){
             if (nama == listlogin[i].username && password == listlogin[i].password) {
                GlobalScope.launch {

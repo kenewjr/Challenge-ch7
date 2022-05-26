@@ -11,10 +11,10 @@ import retrofit2.Response
 
 
 class ViewModelUser: ViewModel() {
-    var liveDataLogin : MutableLiveData<List<GetDataUserItem>?> = MutableLiveData()
-    var liveDataUpdate : MutableLiveData<PostNewUser?> = MutableLiveData()
+    var liveDataLogin : MutableLiveData<List<GetDataUserItem>> = MutableLiveData()
+    var liveDataUpdate : MutableLiveData<PostNewUser> = MutableLiveData()
 
-    fun getLiveLogin(): MutableLiveData<List<GetDataUserItem>?> {
+    fun getLiveLogin(): MutableLiveData<List<GetDataUserItem>>{
         return liveDataLogin
     }
 

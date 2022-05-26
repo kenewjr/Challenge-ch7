@@ -13,11 +13,9 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_film_fav.view.*
-import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
 
-@DelicateCoroutinesApi
 @Suppress("DeferredResultUnused")
 class AdapterFilmFavourite(private val listFilmFavourite: List<Favorite>,
                            private var onClik : (Favorite)->Unit
@@ -25,13 +23,8 @@ class AdapterFilmFavourite(private val listFilmFavourite: List<Favorite>,
     private var filmDb: FavoriteDatabase? = null
     class ViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView)
 
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): ViewHolder {
-
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val viewItem = LayoutInflater.from(parent.context).inflate(R.layout.item_film_fav, parent, false)
-
         return ViewHolder(viewItem)
     }
 

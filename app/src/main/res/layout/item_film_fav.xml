@@ -1,57 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:tools="http://schemas.android.com/tools"
+<androidx.cardview.widget.CardView
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cardfav"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_margin="20dp"
+    app:cardCornerRadius="10dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <LinearLayout
-        android:background="@drawable/login_btn_bg"
-        android:orientation="horizontal"
+    <RelativeLayout
+        android:background="@drawable/menu_bg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/iv_filmimage"
             android:src="@drawable/ic_launcher_background"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/iv_filmimage"
+            android:id="@+id/tv_filmtitle"
+            android:text="judul film"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
             android:layout_width="150dp"
-            android:layout_height="150dp"
-            tools:ignore="ContentDescription" />
-
-        <LinearLayout
-            android:layout_margin="10dp"
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/tv_filmtitle"
-                android:text="film Name"
-                android:textSize="25sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:ignore="HardcodedText" />
-
-            <TextView
-                android:id="@+id/tv_filmdirector"
-                android:text="Film Director"
-                android:textSize="20sp"
-                android:textColor="@color/purple_500"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:ignore="HardcodedText" />
-
-        </LinearLayout>
-        <ImageView
-            android:layout_margin="20dp"
-            android:id="@+id/del_fav"
-            android:layout_gravity="bottom"
-            android:src="@drawable/ic_baseline_delete_forever_24"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/iv_filmimage"
+            android:id="@+id/tv_filmdirector"
+            android:text="director"
+            android:textSize="15sp"
+            android:layout_below="@id/tv_filmtitle"
+            android:textColor="@color/purple_500"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            tools:ignore="HardcodedText,RtlHardcoded" />
+
+        <ImageView
+            android:layout_margin="10dp"
+            android:id="@+id/del_fav"
+            android:layout_toEndOf="@id/tv_filmtitle"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_baseline_delete_forever_24"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             tools:ignore="ContentDescription" />
-    </LinearLayout>
+    </RelativeLayout>
+
 </androidx.cardview.widget.CardView>

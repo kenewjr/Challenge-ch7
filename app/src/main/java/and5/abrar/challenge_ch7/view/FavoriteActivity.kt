@@ -11,11 +11,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_favorite.*
-import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-@DelicateCoroutinesApi
+
 class FavoriteActivity : AppCompatActivity() {
     private var filmDb: FavoriteDatabase? = null
     private val bottomNavigasi = BottomNavigationView.OnNavigationItemSelectedListener { item->

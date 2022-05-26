@@ -15,14 +15,25 @@ import androidx.lifecycle.asLiveData
 import com.bumptech.glide.Glide
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_profile_actvty.*
-import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-@DelicateCoroutinesApi
+@Suppress("DEPRECATION")
 class ProfileActvty : AppCompatActivity() {
     private lateinit var viewModelUserApi : ViewModelUser
     private lateinit var usermanager : UserManager
+    private val bottomNavigasi = BottomNavigationView.OnNavigationItemSelectedListener { item->
+        when (item.itemId) {
+            R.id.favorite -> {
+                startActivity(Intent(this, FavoriteActivity::class.java))
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.Home -> {
+                return@OnNavigationItemSelectedListener false
+            }
+        }
+        false
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile_actvty)
@@ -37,12 +48,8 @@ class ProfileActvty : AppCompatActivity() {
             }
             startActivity(Intent(this, LoginActvty::class.java))
         }
-        findViewById<BottomNavigationView>(R.id.bottom_nav_profile).setOnClickListener {
-            when (it.id) {
-                R.id.favorite -> startActivity(Intent(this, FavoriteActivity::class.java))
-                R.id.Home -> startActivity(Intent(this, FilmActvty::class.java))
-            }
-        }
+        val botnav = findViewById<BottomNavigationView>(R.id.bottom_nav_profile)
+        botnav.setOnNavigationItemSelectedListener(bottomNavigasi)
     }
 
     private fun getDataProfile(){
@@ -78,7 +85,7 @@ class ProfileActvty : AppCompatActivity() {
         val user = up_username.text.toString()
         val alamat = up_address.text.toString()
         val umur = up_umur.text.toString()
-        val image =  usermanager.Image.toString()
+        val image =  "http://loremflickr.com/640/480"
 
         usermanager.Id.asLiveData().observe(this){
             id = it.toString()
