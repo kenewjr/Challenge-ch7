@@ -55,22 +55,22 @@ class ProfileActvty : AppCompatActivity() {
 
     private fun getDataProfile(){
         usermanager = UserManager(this)
-        usermanager.Image.asLiveData().observe(this){
+        usermanager.gambar.asLiveData().observe(this){
             Glide.with(this).load(it).into(profileImage)
         }
-       usermanager.Address.asLiveData().observe(this){
+       usermanager.a.asLiveData().observe(this){
            up_address.setText(it)
        }
-        usermanager.Nama.asLiveData().observe(this){
+        usermanager.nama.asLiveData().observe(this){
             up_nama.setText(it)
         }
-        usermanager.Umur.asLiveData().observe(this){
+        usermanager.umur.asLiveData().observe(this){
             up_umur.setText(it)
         }
         usermanager.userName.asLiveData().observe(this){
             up_username.setText(it)
         }
-        usermanager.Pass.asLiveData().observe(this){
+        usermanager.pass.asLiveData().observe(this){
             up_pass.setText(it)
         }
 
@@ -88,7 +88,7 @@ class ProfileActvty : AppCompatActivity() {
         val umur = up_umur.text.toString()
         val image =  "http://loremflickr.com/640/480"
 
-        usermanager.Id.asLiveData().observe(this){
+        usermanager.id.asLiveData().observe(this){
             id = it.toString()
         }
         AlertDialog.Builder(this)

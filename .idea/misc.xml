@@ -3,7 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/kuliah/kampus-merdeka/materi/binar/android-studio/Challengech7/app/src/bayar/res/layout/activity_detail_actvty.xml" value="0.1" />
         <entry key="..\:/kuliah/kampus-merdeka/materi/binar/android-studio/Challengech7/app/src/bayar/res/layout/activity_favorite.xml" value="0.16576086956521738" />
+        <entry key="..\:/kuliah/kampus-merdeka/materi/binar/android-studio/Challengech7/app/src/bayar/res/layout/activity_film_actvty.xml" value="0.1" />
+        <entry key="..\:/kuliah/kampus-merdeka/materi/binar/android-studio/Challengech7/app/src/bayar/res/layout/activity_profile_actvty.xml" value="0.1" />
+        <entry key="..\:/kuliah/kampus-merdeka/materi/binar/android-studio/Challengech7/app/src/gratis/res/drawable/ic_login_bg.xml" value="0.1" />
+        <entry key="..\:/kuliah/kampus-merdeka/materi/binar/android-studio/Challengech7/app/src/gratis/res/drawable/ic_register_bg.xml" value="0.1" />
         <entry key="..\:/kuliah/kampus-merdeka/materi/binar/android-studio/Challengech7/app/src/gratis/res/layout/activity_detail_actvty.xml" value="0.16576086956521738" />
         <entry key="..\:/kuliah/kampus-merdeka/materi/binar/android-studio/Challengech7/app/src/gratis/res/layout/activity_favorite.xml" value="0.16576086956521738" />
         <entry key="..\:/kuliah/kampus-merdeka/materi/binar/android-studio/Challengech7/app/src/gratis/res/layout/activity_film_actvty.xml" value="0.16576086956521738" />

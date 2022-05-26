@@ -31,25 +31,25 @@ class UserManager(context: Context) {
         }
     }
 
-    val Nama : Flow<String> = dataStore.data.map {
+    val nama : Flow<String> = dataStore.data.map {
         it[NAMA] ?:""
     }
-    val Id : Flow<String> = dataStore.data.map {
+    val id : Flow<String> = dataStore.data.map {
         it[ID] ?:""
     }
-    val Pass : Flow<String> = dataStore.data.map {
+    val pass : Flow<String> = dataStore.data.map {
         it[PASS] ?:""
     }
-    val Umur : Flow<String> = dataStore.data.map {
+    val umur : Flow<String> = dataStore.data.map {
         it[UMUR] ?:""
     }
     val userName : Flow<String> = dataStore.data.map {
         it[USERNAME] ?:""
     }
-    val Image : Flow<String> = dataStore.data.map {
+    val gambar : Flow<String> = dataStore.data.map {
         it[IMAGE] ?:""
     }
-    val Address : Flow<String> = dataStore.data.map {
+    val a : Flow<String> = dataStore.data.map {
         it[ADDRESS] ?:""
     }
     val ceklogin : Flow<Boolean> = dataStore.data.map {

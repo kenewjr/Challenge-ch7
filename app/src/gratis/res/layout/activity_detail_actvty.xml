@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
     <TextView
         android:id="@+id/inidetail"
         android:text="@string/detail_film"
@@ -17,44 +16,54 @@
         android:textColor="#00ffff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
-    <ImageView
+    <ScrollView
         android:layout_below="@id/inidetail"
-        android:id="@+id/imgdetail"
-        android:layout_width="300dp"
-        android:layout_centerHorizontal="true"
-        android:layout_height="300dp"
-        tools:ignore="ContentDescription" />
-    <TextView
-        android:layout_below="@id/imgdetail"
-        android:id="@+id/tvJudul"
-        android:textSize="30sp"
-        android:textColor="#00ffff"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <TextView
-        android:layout_below="@id/tvJudul"
-        android:id="@+id/tvtglFilm"
-        android:textSize="20sp"
-        android:textColor="#ff0000"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <TextView
-        android:layout_below="@id/tvtglFilm"
-        android:id="@+id/tvsutradara"
-        android:textSize="20sp"
-        android:textColor="#ff0000"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <TextView
-        android:id="@+id/tvdesc"
-        android:textSize="20sp"
-        android:textColor="#ff0000"
-        android:layout_below="@id/tvsutradara"
+        android:layout_above="@id/bottom_nav_detail"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="ScrollViewSize">
+        <ImageView
+            android:id="@+id/imgdetail"
+            android:layout_width="300dp"
+            android:layout_centerHorizontal="true"
+            android:layout_height="300dp"
+            tools:ignore="ContentDescription" />
+        <TextView
+            android:layout_below="@id/imgdetail"
+            android:id="@+id/tvJudul"
+            android:textSize="30sp"
+            android:textColor="#00ffff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_below="@id/tvJudul"
+            android:id="@+id/tvtglFilm"
+            android:textSize="20sp"
+            android:textColor="#ff0000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_below="@id/tvtglFilm"
+            android:id="@+id/tvsutradara"
+            android:textSize="20sp"
+            android:textColor="#ff0000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tvdesc"
+            android:textSize="20sp"
+            android:textColor="#ff0000"
+            android:layout_below="@id/tvsutradara"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+    </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav_detail"
