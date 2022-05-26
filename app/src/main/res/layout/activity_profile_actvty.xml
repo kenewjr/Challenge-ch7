@@ -12,7 +12,7 @@
     <TextView
         android:id="@+id/DETAILPROFILE"
         android:layout_margin="10dp"
-        android:text="DETAIL PROFILE"
+        android:text="@string/detail_profile"
         android:textStyle="bold"
         android:textSize="30sp"
         android:layout_centerHorizontal="true"
@@ -25,7 +25,8 @@
         android:id="@+id/profileImage"
         android:layout_centerHorizontal="true"
         android:layout_width="100sp"
-        android:layout_height="100sp"/>
+        android:layout_height="100sp"
+        tools:ignore="ContentDescription" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView3"
@@ -58,7 +59,8 @@
                     android:drawableStart="@drawable/ic_baseline_person_24"
                     android:drawablePadding="6dp"
                     android:hint="Name"
-                    android:inputType="text" />
+                    android:inputType="text"
+                    tools:ignore="HardcodedText,UnusedAttribute" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -76,7 +78,8 @@
                     android:drawablePadding="6dp"
                     android:drawableTint="#0000ff"
                     android:hint="Username"
-                    android:inputType="textEmailAddress" />
+                    android:inputType="textEmailAddress"
+                    tools:ignore="HardcodedText,UnusedAttribute" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -94,7 +97,8 @@
                     android:drawablePadding="6dp"
                     android:drawableTint="#0000ff"
                     android:hint="Adress"
-                    android:inputType="textEmailAddress" />
+                    android:inputType="textEmailAddress"
+                    tools:ignore="HardcodedText,UnusedAttribute" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -112,7 +116,8 @@
                     android:drawablePadding="6dp"
                     android:drawableTint="#0000ff"
                     android:hint="Umur"
-                    android:inputType="textEmailAddress" />
+                    android:inputType="textEmailAddress"
+                    tools:ignore="HardcodedText,UnusedAttribute" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -132,7 +137,8 @@
                     android:drawablePadding="6dp"
                     android:drawableTint="#0000ff"
                     android:hint="Password"
-                    android:inputType="textPassword" />
+                    android:inputType="textPassword"
+                    tools:ignore="HardcodedText,UnusedAttribute" />
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -145,7 +151,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/cardView3"
-        android:text="update" />
+        android:text="update"
+        tools:ignore="HardcodedText" />
     <Button
         android:layout_margin="10dp"
         android:background="@drawable/login_btn_bg"
@@ -153,7 +160,8 @@
         android:id="@+id/btnLogout"
         android:text="Logout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        tools:ignore="HardcodedText" />
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav_profile"
         android:layout_alignParentBottom="true"

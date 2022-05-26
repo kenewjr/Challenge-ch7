@@ -1,19 +1,19 @@
 package and5.abrar.challenge_ch7.view
 
-import and5.abrar.challenge_ch7.datastore.UserManager
 import and5.abrar.challenge_ch7.R
+import and5.abrar.challenge_ch7.datastore.UserManager
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.asLiveData
-import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_splash_screen.*
+import kotlinx.coroutines.DelicateCoroutinesApi
 
+@DelicateCoroutinesApi
 @SuppressLint("CustomSplashScreen")
 class SplashScreen : AppCompatActivity() {
     private lateinit var userManager: UserManager

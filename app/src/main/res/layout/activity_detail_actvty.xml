@@ -11,7 +11,7 @@
 
     <TextView
         android:id="@+id/inidetail"
-        android:text="DETAIL FILM"
+        android:text="@string/detail_film"
         android:textStyle="bold"
         android:textSize="30sp"
         android:layout_centerHorizontal="true"
@@ -23,7 +23,8 @@
         android:id="@+id/imgdetail"
         android:layout_width="300dp"
         android:layout_centerHorizontal="true"
-        android:layout_height="300dp"/>
+        android:layout_height="300dp"
+        tools:ignore="ContentDescription" />
     <TextView
         android:layout_below="@id/imgdetail"
         android:id="@+id/tvJudul"

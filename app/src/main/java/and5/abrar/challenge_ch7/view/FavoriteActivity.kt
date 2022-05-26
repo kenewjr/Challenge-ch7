@@ -1,18 +1,21 @@
+@file:Suppress("DEPRECATION")
+
 package and5.abrar.challenge_ch7.view
 
-import and5.abrar.challenge_ch7.room.FavoriteDatabase
 import and5.abrar.challenge_ch7.R
+import and5.abrar.challenge_ch7.room.FavoriteDatabase
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_favorite.*
-import kotlinx.android.synthetic.main.activity_profile_actvty.*
+import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
+@DelicateCoroutinesApi
 class FavoriteActivity : AppCompatActivity() {
     private var filmDb: FavoriteDatabase? = null
     private val bottomNavigasi = BottomNavigationView.OnNavigationItemSelectedListener { item->
@@ -46,7 +49,7 @@ class FavoriteActivity : AppCompatActivity() {
                     if(listFavFilm.isEmpty()){
                         tv.text = "data kosong"
                     }else{
-                        listFavFilm.let {
+                        listFavFilm.let { it ->
                             rv_favfilm.adapter = AdapterFilmFavourite(it){
                                 val pindah = Intent(applicationContext,DetailActvty::class.java)
                                 pindah.putExtra("detailfav",it)

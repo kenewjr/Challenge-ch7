@@ -8,7 +8,6 @@ import kotlinx.coroutines.flow.map
 
 class UserManager(context: Context) {
     private val dataStore : DataStore<Preferences> = context.createDataStore(name = "user_pref")
-    private val imageData : DataStore<Preferences> = context.createDataStore(name = "image")
     companion object{
         val NAMA = preferencesKey<String>("nama")
         val PASS = preferencesKey<String>("pass")
@@ -31,12 +30,7 @@ class UserManager(context: Context) {
             it[ADDRESS]= adress
         }
     }
-    suspend fun setImage(image: String){
-        imageData.edit {
-            it[IMAGE] = image
 
-        }
-    }
     val Nama : Flow<String> = dataStore.data.map {
         it[NAMA] ?:""
     }

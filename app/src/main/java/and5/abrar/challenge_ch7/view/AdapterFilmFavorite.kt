@@ -13,9 +13,11 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_film_fav.view.*
+import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
 
+@DelicateCoroutinesApi
 @Suppress("DeferredResultUnused")
 class AdapterFilmFavourite(private val listFilmFavourite: List<Favorite>,
                            private var onClik : (Favorite)->Unit
@@ -48,7 +50,7 @@ class AdapterFilmFavourite(private val listFilmFavourite: List<Favorite>,
                 .setTitle("Hapus data")
                 .setMessage("yakin hapus data")
                 .setPositiveButton("ya"){
-                        dialogInterface : DialogInterface, i : Int ->
+                        _: DialogInterface, _: Int ->
                     GlobalScope.async {
                         val result = filmDb?.favoriteduo()?.deletefavorite(listFilmFavourite[position])
                         (holder.itemView.context as FavoriteActivity).runOnUiThread{
@@ -63,7 +65,7 @@ class AdapterFilmFavourite(private val listFilmFavourite: List<Favorite>,
                     }
                 }
                 .setNegativeButton("Tidak"){
-                        dialogInterface : DialogInterface, i : Int ->
+                        dialogInterface : DialogInterface, _: Int ->
                     dialogInterface.dismiss()
                 }
                 .show()

@@ -13,7 +13,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_film_actvty.*
+import kotlinx.coroutines.DelicateCoroutinesApi
 
+@DelicateCoroutinesApi
+@Suppress("DEPRECATION")
 @AndroidEntryPoint
 class FilmActvty : AppCompatActivity() {
     private lateinit var adapterFilm: AdapterFilm

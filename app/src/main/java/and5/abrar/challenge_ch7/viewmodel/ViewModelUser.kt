@@ -1,37 +1,23 @@
 package and5.abrar.challenge_ch7.viewmodel
 
 import and5.abrar.challenge_ch7.api.ApiClient
-import and5.abrar.challenge_ch7.api.ApiService
 import and5.abrar.challenge_ch7.model.GetDataUserItem
 import and5.abrar.challenge_ch7.model.PostNewUser
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 
 class ViewModelUser: ViewModel() {
-    lateinit var liveDataLogin : MutableLiveData<List<GetDataUserItem>>
-    lateinit var liveDataUpdate : MutableLiveData<PostNewUser>
+    var liveDataLogin : MutableLiveData<List<GetDataUserItem>?> = MutableLiveData()
+    var liveDataUpdate : MutableLiveData<PostNewUser?> = MutableLiveData()
 
-    init {
-        liveDataLogin = MutableLiveData()
-        liveDataUpdate = MutableLiveData()
-
-    }
-
-    fun getLiveLogin(): MutableLiveData<List<GetDataUserItem>>{
+    fun getLiveLogin(): MutableLiveData<List<GetDataUserItem>?> {
         return liveDataLogin
     }
-    fun getLiveUpdate() : MutableLiveData<PostNewUser>{
-        return liveDataUpdate
-    }
+
     fun loginUserAPI(){
         ApiClient.instance.allUser()
             .enqueue(object : Callback<List<GetDataUserItem>>{
