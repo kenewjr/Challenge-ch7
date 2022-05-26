@@ -29,7 +29,8 @@ class ProfileActvty : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.Home -> {
-                return@OnNavigationItemSelectedListener false
+                startActivity(Intent(this, FilmActvty::class.java))
+                return@OnNavigationItemSelectedListener true
             }
         }
         false

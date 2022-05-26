@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:background="@drawable/gambar_bg"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/DETAILPROFILE"
+        android:layout_margin="10dp"
+        android:text="@string/detail_profile"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:layout_below="@id/DETAILPROFILE"
+        android:id="@+id/profileImage"
+        android:layout_centerHorizontal="true"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        tools:ignore="ContentDescription" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        android:layout_below="@id/profileImage">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="6dp"
+                android:paddingStart="6dp"
+                android:paddingEnd="6dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/up_nama"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableTint="#0000ff"
+                    android:drawableStart="@drawable/ic_baseline_person_24"
+                    android:drawablePadding="6dp"
+                    android:hint="Name"
+                    android:inputType="text"
+                    tools:ignore="HardcodedText,UnusedAttribute" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="6dp"
+                android:paddingStart="6dp"
+                android:paddingEnd="6dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/up_username"
+                    android:drawableStart="@drawable/ic_email"
+                    android:drawablePadding="6dp"
+                    android:drawableTint="#0000ff"
+                    android:hint="Username"
+                    android:inputType="textEmailAddress"
+                    tools:ignore="HardcodedText,UnusedAttribute" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="6dp"
+                android:paddingStart="6dp"
+                android:paddingEnd="6dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/up_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_baseline_location_on_24"
+                    android:drawablePadding="6dp"
+                    android:drawableTint="#0000ff"
+                    android:hint="Adress"
+                    android:inputType="textEmailAddress"
+                    tools:ignore="HardcodedText,UnusedAttribute" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="6dp"
+                android:paddingStart="6dp"
+                android:paddingEnd="6dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/up_umur"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_baseline_person_24"
+                    android:drawablePadding="6dp"
+                    android:drawableTint="#0000ff"
+                    android:hint="Umur"
+                    android:inputType="textEmailAddress"
+                    tools:ignore="HardcodedText,UnusedAttribute" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="24dp"
+                android:paddingStart="6dp"
+                android:paddingEnd="6dp"
+                app:passwordToggleEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:id="@+id/up_pass"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_lock"
+                    android:drawablePadding="6dp"
+                    android:drawableTint="#0000ff"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    tools:ignore="HardcodedText,UnusedAttribute" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btnUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cardView3"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/login_btn_bg"
+        android:text="update"
+        android:visibility="invisible"
+        tools:ignore="HardcodedText" />
+    <Button
+        android:layout_margin="10dp"
+        android:background="@drawable/login_btn_bg"
+        android:layout_below="@id/btnUpdate"
+        android:id="@+id/btnLogout"
+        android:text="Logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="HardcodedText" />
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav_profile"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/menu"
+        android:background="@drawable/menu_bg"
+        app:itemIconTint="#E91E63"
+        app:itemTextColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

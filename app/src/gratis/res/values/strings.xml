@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Challenge-ch7</string>
+    <string name="detail_film">DETAIL FILM</string>
+    <string name="detail_profile">DETAIL PROFILE</string>
+    <string name="ui_register">UI Register</string>
+    <string name="ui_login">UI Login</string>
+</resources>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardFilm"
+    android:layout_margin="20sp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    app:cardCornerRadius="10dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:background="@drawable/menu_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/gambarFilm"
+            android:src="@drawable/ic_launcher_background"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/gambarFilm"
+            android:id="@+id/namaFilm"
+            android:text="judul film"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/gambarFilm"
+            android:id="@+id/Director"
+            android:text="director"
+            android:textSize="15sp"
+            android:layout_below="@id/namaFilm"
+            android:textColor="@color/purple_500"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:ignore="HardcodedText,RtlHardcoded" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
