@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:background="@drawable/gambar_bg"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.DetailActvty">
+
+
+    <TextView
+        android:id="@+id/inidetail"
+        android:text="DETAIL FILM"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#00ffff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <ImageView
+        android:layout_below="@id/inidetail"
+        android:id="@+id/imgdetail"
+        android:layout_width="300dp"
+        android:layout_centerHorizontal="true"
+        android:layout_height="300dp"/>
+    <TextView
+        android:layout_below="@id/imgdetail"
+        android:id="@+id/tvJudul"
+        android:textSize="30sp"
+        android:textColor="#00ffff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_below="@id/tvJudul"
+        android:id="@+id/tvtglFilm"
+        android:textSize="20sp"
+        android:textColor="#ff0000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_below="@id/tvtglFilm"
+        android:id="@+id/tvsutradara"
+        android:textSize="20sp"
+        android:textColor="#ff0000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tvdesc"
+        android:textSize="20sp"
+        android:textColor="#ff0000"
+        android:layout_below="@id/tvsutradara"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav_detail"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/menu_detail"
+        android:background="@drawable/menu_bg"
+        app:itemIconTint="#E91E63"
+        app:itemTextColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

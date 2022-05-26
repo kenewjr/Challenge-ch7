@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/kuliah/kampus-merdeka/materi/binar/android-studio/Challengech7/app/src/main/res/drawable/background.xml" value="0.1405" />
+        <entry key="..\:/kuliah/kampus-merdeka/materi/binar/android-studio/Challengech7/app/src/main/res/drawable/btn_top.xml" value="0.1" />
+        <entry key="..\:/kuliah/kampus-merdeka/materi/binar/android-studio/Challengech7/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.1775" />
+        <entry key="..\:/kuliah/kampus-merdeka/materi/binar/android-studio/Challengech7/app/src/main/res/drawable/ic_baseline_delete_forever_24.xml" value="0.1" />
+        <entry key="..\:/kuliah/kampus-merdeka/materi/binar/android-studio/Challengech7/app/src/main/res/drawable/ic_email.xml" value="0.1405" />
+        <entry key="..\:/kuliah/kampus-merdeka/materi/binar/android-studio/Challengech7/app/src/main/res/drawable/ic_lock.xml" value="0.1405" />
+        <entry key="..\:/kuliah/kampus-merdeka/materi/binar/android-studio/Challengech7/app/src/main/res/drawable/ic_login_bg.xml" value="0.1405" />
+        <entry key="..\:/kuliah/kampus-merdeka/materi/binar/android-studio/Challengech7/app/src/main/res/drawable/ic_register_bg.xml" value="0.1405" />
+        <entry key="..\:/kuliah/kampus-merdeka/materi/binar/android-studio/Challengech7/app/src/main/res/drawable/login_btn_bg.xml" value="0.1405" />
+        <entry key="..\:/kuliah/kampus-merdeka/materi/binar/android-studio/Challengech7/app/src/main/res/drawable/menu_bg.xml" value="0.1405" />
+        <entry key="..\:/kuliah/kampus-merdeka/materi/binar/android-studio/Challengech7/app/src/main/res/layout/activity_detail_actvty.xml" value="0.16576086956521738" />
+        <entry key="..\:/kuliah/kampus-merdeka/materi/binar/android-studio/Challengech7/app/src/main/res/layout/activity_favorite.xml" value="0.16576086956521738" />
+        <entry key="..\:/kuliah/kampus-merdeka/materi/binar/android-studio/Challengech7/app/src/main/res/layout/activity_film_actvty.xml" value="0.2" />
+        <entry key="..\:/kuliah/kampus-merdeka/materi/binar/android-studio/Challengech7/app/src/main/res/layout/activity_login_actvty.xml" value="0.176" />
+        <entry key="..\:/kuliah/kampus-merdeka/materi/binar/android-studio/Challengech7/app/src/main/res/layout/activity_main.xml" value="0.15896739130434784" />
+        <entry key="..\:/kuliah/kampus-merdeka/materi/binar/android-studio/Challengech7/app/src/main/res/layout/activity_profile_actvty.xml" value="0.2" />
+        <entry key="..\:/kuliah/kampus-merdeka/materi/binar/android-studio/Challengech7/app/src/main/res/layout/activity_register_actvty.xml" value="0.16576086956521738" />
+        <entry key="..\:/kuliah/kampus-merdeka/materi/binar/android-studio/Challengech7/app/src/main/res/layout/activity_splash_screen.xml" value="0.16576086956521738" />
+        <entry key="..\:/kuliah/kampus-merdeka/materi/binar/android-studio/Challengech7/app/src/main/res/layout/item_film.xml" value="0.16576086956521738" />
+        <entry key="..\:/kuliah/kampus-merdeka/materi/binar/android-studio/Challengech7/app/src/main/res/layout/item_film_fav.xml" value="0.16576086956521738" />
+        <entry key="..\:/kuliah/kampus-merdeka/materi/binar/android-studio/Challengech7/app/src/main/res/menu/menu.xml" value="0.2234375" />
+        <entry key="..\:/kuliah/kampus-merdeka/materi/binar/android-studio/Challengech7/app/src/main/res/menu/menu_detail.xml" value="0.2234375" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
