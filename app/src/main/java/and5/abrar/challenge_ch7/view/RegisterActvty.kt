@@ -18,8 +18,10 @@ import kotlinx.coroutines.launch
 
 @Suppress("SameParameterValue")
 class RegisterActvty : AppCompatActivity() {
+
     private lateinit var viewModelUserApi : ViewModelUser
     private lateinit var  usermanager : UserManager
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register_actvty)
@@ -28,19 +30,21 @@ class RegisterActvty : AppCompatActivity() {
         btnLogRegister.setOnClickListener {
             onBackPressed()
         }
+
         btnregis.setOnClickListener {
+
             val nama = et_nama.text.toString()
             val pass = et_pass.text.toString()
             val user = et_username.text.toString()
             val alamat = et_address.text.toString()
             val umur = et_umur.text.toString()
             val image =  "http://loremflickr.com/640/480"
+
             GlobalScope.launch {
                 tambahUser(alamat,image,umur.toInt(),user,pass,nama)
             }
             overridePendingTransition(R.anim.slide_from_left,R.anim.slide_to_right)
             startActivity(Intent(this, LoginActvty::class.java))
-
         }
     }
     private fun tambahUser(

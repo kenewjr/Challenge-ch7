@@ -14,6 +14,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ViewModelFilm @Inject constructor(apiService: ApiService):ViewModel() {
+
     private var liveDataFilm = MutableLiveData<List<GetDataFilmItem>>()
     val film : LiveData<List<GetDataFilmItem>> = liveDataFilm
 
@@ -24,4 +25,5 @@ class ViewModelFilm @Inject constructor(apiService: ApiService):ViewModel() {
             liveDataFilm.value = datafilm
         }
     }
+
 }

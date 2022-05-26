@@ -19,6 +19,7 @@ import kotlinx.coroutines.async
 
 @Suppress("DeferredResultUnused")
 class DetailActvty : AppCompatActivity() {
+
     private var filmDb: FavoriteDatabase? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,31 +28,36 @@ class DetailActvty : AppCompatActivity() {
         filmDb = FavoriteDatabase.getinstance(this)
         val detailfilm = intent.getParcelableExtra("detailfilm") as GetDataFilmItem?
         val detailfav = intent.getParcelableExtra("detailfav") as Favorite?
+
         val bottomNavigasi = BottomNavigationView.OnNavigationItemSelectedListener { item->
             when (item.itemId) {
                 R.id.favorite -> {
                     startActivity(Intent(this, FavoriteActivity::class.java))
+                    overridePendingTransition(R.anim.slide_from_left,R.anim.slide_to_right)
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.Home -> {
                     startActivity(Intent(this, FilmActvty::class.java))
+                    overridePendingTransition(R.anim.slide_from_left,R.anim.slide_to_right)
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.AddButton -> {
                     if (detailfilm != null){
                         addfavfilm()
                         startActivity(Intent(this, FavoriteActivity::class.java))
+                        overridePendingTransition(R.anim.slide_from_right,R.anim.slide_to_left)
                         return@OnNavigationItemSelectedListener true
                     }else if(detailfav != null){
-                        Toast.makeText(this, "Sudah masuk Favorite", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Film Anda Sudah Masuk Favorite", Toast.LENGTH_SHORT).show()
                     }
-
                 }
             }
             false
         }
+
         val botnav = findViewById<BottomNavigationView>(R.id.bottom_nav_detail)
         botnav.setOnNavigationItemSelectedListener(bottomNavigasi)
+
         if(detailfilm != null){
             tvJudul.text = detailfilm.name
             tvsutradara.text = detailfilm.director
@@ -66,6 +72,7 @@ class DetailActvty : AppCompatActivity() {
             Glide.with(this).load(detailfav.image).into(imgdetail)
         }
     }
+
     private fun addfavfilm(){
 
         val detailFilm = intent.getParcelableExtra<GetDataFilmItem>("detailfilm")
@@ -76,9 +83,7 @@ class DetailActvty : AppCompatActivity() {
             val synopsis = detailFilm.description
             val title = detailFilm.name
             val image = detailFilm.image
-
             filmDb?.favoriteduo()?.addFavorite(Favorite(null, director, image, releasedate, synopsis, title) )
-
         }
     }
 }

@@ -8,11 +8,11 @@ import retrofit2.http.*
 
 interface ApiService {
     @GET("film")
-   suspend fun getAllfilm(): List<GetDataFilmItem>
-
+    suspend fun getAllfilm(): List<GetDataFilmItem>
 
     @GET("user")
     fun allUser(): Call<List<GetDataUserItem>>
+
     @PUT("user/{id}")
     @FormUrlEncoded
     fun updateUser(
@@ -24,6 +24,7 @@ interface ApiService {
         @Field("umur")umur : String,
         @Field("image")image : String
     ): Call<PostNewUser>
+
     @POST("user")
     fun postDataUser(@Body reqUser: PostNewUser) : Call<GetDataUserItem>
 }

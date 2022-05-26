@@ -18,12 +18,15 @@ class SplashScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
+
         val topAnimation = AnimationUtils.loadAnimation(this,R.anim.top_animation)
         val middleAnimation = AnimationUtils.loadAnimation(this,R.anim.middle_animation)
         val bottomAnimation = AnimationUtils.loadAnimation(this,R.anim.bottom_animation)
+
         TopTextView.startAnimation(topAnimation)
         MiddleTextView.startAnimation(middleAnimation)
         BottomTextView.startAnimation(bottomAnimation)
+
         userManager = UserManager(this)
         val splashtimeout = 4000
 
@@ -31,14 +34,14 @@ class SplashScreen : AppCompatActivity() {
             userManager.ceklogin.asLiveData().observe(this){
                 if(it == true){
                     startActivity(Intent(this, FilmActvty::class.java))
+                    overridePendingTransition(R.anim.fade_in,R.anim.fade_out)
                     finish()
                 }else{
                     startActivity(Intent(this, LoginActvty::class.java))
+                    overridePendingTransition(R.anim.fade_in,R.anim.fade_out)
                     finish()
                 }
             }
-            },splashtimeout.toLong())
-
-
+         },splashtimeout.toLong())
     }
 }

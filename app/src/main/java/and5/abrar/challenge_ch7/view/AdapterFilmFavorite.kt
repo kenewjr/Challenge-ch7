@@ -17,9 +17,8 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
 
 @Suppress("DeferredResultUnused")
-class AdapterFilmFavourite(private val listFilmFavourite: List<Favorite>,
-                           private var onClik : (Favorite)->Unit
-) : RecyclerView.Adapter<AdapterFilmFavourite.ViewHolder>() {
+class AdapterFilmFavourite(private val listFilmFavourite: List<Favorite>,private var onClik : (Favorite)->Unit
+                            ) : RecyclerView.Adapter<AdapterFilmFavourite.ViewHolder>() {
     private var filmDb: FavoriteDatabase? = null
     class ViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView)
 
@@ -32,9 +31,11 @@ class AdapterFilmFavourite(private val listFilmFavourite: List<Favorite>,
         holder.itemView.cardfav.setOnClickListener {
             onClik(listFilmFavourite[position])
         }
+
         this.let {
             Glide.with(holder.itemView.context).load(listFilmFavourite[position].image).into(holder.itemView.iv_filmimage)
         }
+
         holder.itemView.tv_filmdirector.text = listFilmFavourite[position].director
         holder.itemView.tv_filmtitle.text = listFilmFavourite[position].title
         holder.itemView.del_fav.setOnClickListener {

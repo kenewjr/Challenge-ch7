@@ -11,6 +11,7 @@ import retrofit2.Response
 
 
 class ViewModelUser: ViewModel() {
+
     var liveDataLogin : MutableLiveData<List<GetDataUserItem>> = MutableLiveData()
     var liveDataUpdate : MutableLiveData<PostNewUser> = MutableLiveData()
 
@@ -53,6 +54,7 @@ class ViewModelUser: ViewModel() {
 
             })
     }
+
     fun addNewUserApi(
         alamat: String,
         image: String,
@@ -76,4 +78,5 @@ class ViewModelUser: ViewModel() {
         })
         return messageResponse
     }
+
 }

@@ -11,14 +11,16 @@ import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_film.view.*
 
 class AdapterFilm(private var onClik :(GetDataFilmItem)->Unit):RecyclerView.Adapter<AdapterFilm.ViewHolder>() {
+
     class ViewHolder(itemView : View):RecyclerView.ViewHolder(itemView)
     private var dataFilm : List<GetDataFilmItem>? = null
+
     fun setFilm(film: List<GetDataFilmItem>){
         this.dataFilm = film
     }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val viewitem = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_film,parent, false)
+        val viewitem = LayoutInflater.from(parent.context).inflate(R.layout.item_film,parent, false)
         return ViewHolder(viewitem)
     }
 
@@ -26,11 +28,15 @@ class AdapterFilm(private var onClik :(GetDataFilmItem)->Unit):RecyclerView.Adap
         holder.itemView.cardFilm.setOnClickListener {
             onClik(dataFilm!![position])
         }
+
         holder.itemView.namaFilm.text = dataFilm!![position].name
+
         Glide.with(holder.itemView.context)
             .load(dataFilm!![position].image)
             .into(holder.itemView.gambarFilm)
+
         holder.itemView.namaFilm.text =  dataFilm!![position].name
+
         holder.itemView.Director.text = dataFilm!![position].director
     }
 

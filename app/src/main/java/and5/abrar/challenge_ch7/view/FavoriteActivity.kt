@@ -14,22 +14,26 @@ import kotlinx.android.synthetic.main.activity_favorite.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-
 class FavoriteActivity : AppCompatActivity() {
+
     private var filmDb: FavoriteDatabase? = null
+
     private val bottomNavigasi = BottomNavigationView.OnNavigationItemSelectedListener { item->
         when (item.itemId) {
             R.id.favorite -> {
                 startActivity(Intent(this, FavoriteActivity::class.java))
+                overridePendingTransition(R.anim.slide_from_right,R.anim.slide_to_left)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.Home -> {
                 startActivity(Intent(this, FilmActvty::class.java))
+                overridePendingTransition(R.anim.slide_from_left,R.anim.slide_to_right)
                 return@OnNavigationItemSelectedListener true
             }
         }
         false
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_favorite)
@@ -38,6 +42,7 @@ class FavoriteActivity : AppCompatActivity() {
         getFilmFav()
         filmDb = FavoriteDatabase.getinstance(this)
     }
+
     @SuppressLint("SetTextI18n")
     fun getFilmFav(){
         rv_favfilm.layoutManager = LinearLayoutManager(this)
@@ -53,6 +58,7 @@ class FavoriteActivity : AppCompatActivity() {
                                 val pindah = Intent(applicationContext,DetailActvty::class.java)
                                 pindah.putExtra("detailfav",it)
                                 startActivity(pindah)
+                                overridePendingTransition(R.anim.fade_in,R.anim.fade_out)
                             }
                         }
                     }

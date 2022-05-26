@@ -16,38 +16,48 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 class LoginActvty : AppCompatActivity() {
+
     private lateinit var usermanager : UserManager
     private lateinit var listuserlogin : List<GetDataUserItem>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_actvty)
+
         usermanager = UserManager(this)
+
         btnLogin.setOnClickListener {
                 login()
         }
+
         btnRegLogin.setOnClickListener {
             startActivity(Intent(this,RegisterActvty::class.java))
             overridePendingTransition(R.anim.slide_from_right,R.anim.slide_to_left)
         }
-
     }
+
     private fun login(){
         val viewModel = ViewModelProvider(this).get(ViewModelUser::class.java)
         viewModel.loginUserAPI()
+
         viewModel.getLiveLogin().observe(this) {
             if (it != null) {
                 listuserlogin = it
                 loginAuth(listuserlogin)
                 startActivity(Intent(this, FilmActvty::class.java))
+                overridePendingTransition(R.anim.fade_in,R.anim.fade_out)
             } else {
                 Toast.makeText(this, "gagal login", Toast.LENGTH_SHORT).show()
             }
         }
     }
+
     private fun loginAuth(listlogin : List<GetDataUserItem>){
+
         usermanager = UserManager(this)
         val nama = login_nama.text.toString()
         val  password = login_pass.text.toString()
+
         for(i in listlogin.indices){
             if (nama == listlogin[i].username && password == listlogin[i].password) {
                GlobalScope.launch {

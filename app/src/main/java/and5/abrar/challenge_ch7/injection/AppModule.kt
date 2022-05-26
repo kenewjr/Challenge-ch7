@@ -22,12 +22,9 @@ object AppModule {
             return httpLoggingInterceptor.apply {
                 httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
             }
-
         }
 
-    private val client = OkHttpClient.Builder()
-        .addInterceptor(logging)
-        .build()
+    private val client = OkHttpClient.Builder().addInterceptor(logging).build()
 
     @Provides
     @Singleton

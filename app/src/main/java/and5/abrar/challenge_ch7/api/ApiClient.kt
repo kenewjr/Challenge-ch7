@@ -15,6 +15,7 @@ object ApiClient {
                 httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
             }
         }
+
     private val clint = OkHttpClient.Builder().addInterceptor(logging).build()
     val instance : ApiService by lazy {
         val retrofit = Retrofit.Builder()

@@ -7,7 +7,9 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
 class UserManager(context: Context) {
+
     private val dataStore : DataStore<Preferences> = context.createDataStore(name = "user_pref")
+
     companion object{
         val NAMA = preferencesKey<String>("nama")
         val PASS = preferencesKey<String>("pass")
@@ -61,9 +63,11 @@ class UserManager(context: Context) {
         }
 
     }
+
     suspend fun setBoolean(boolean: Boolean){
         dataStore.edit {
             it[BOOLEAN] = boolean
         }
     }
+
 }

@@ -20,35 +20,45 @@ import kotlinx.coroutines.launch
 
 @Suppress("DEPRECATION")
 class ProfileActvty : AppCompatActivity() {
+
     private lateinit var viewModelUserApi : ViewModelUser
     private lateinit var usermanager : UserManager
+
     private val bottomNavigasi = BottomNavigationView.OnNavigationItemSelectedListener { item->
         when (item.itemId) {
             R.id.favorite -> {
                 startActivity(Intent(this, FavoriteActivity::class.java))
+                overridePendingTransition(R.anim.slide_from_right,R.anim.slide_to_left)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.Home -> {
                 startActivity(Intent(this, FilmActvty::class.java))
+                overridePendingTransition(R.anim.slide_from_left,R.anim.slide_to_right)
                 return@OnNavigationItemSelectedListener true
             }
         }
         false
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile_actvty)
+
         usermanager = UserManager(this)
         getDataProfile()
+
         btnUpdate.setOnClickListener {
             updateData()
         }
+
         btnLogout.setOnClickListener {
             GlobalScope.launch {
                 usermanager.hapusData()
             }
             startActivity(Intent(this, LoginActvty::class.java))
+            overridePendingTransition(R.anim.fade_in,R.anim.fade_out)
         }
+
         val botnav = findViewById<BottomNavigationView>(R.id.bottom_nav_profile)
         botnav.setOnNavigationItemSelectedListener(bottomNavigasi)
     }
@@ -58,28 +68,30 @@ class ProfileActvty : AppCompatActivity() {
         usermanager.gambar.asLiveData().observe(this){
             Glide.with(this).load(it).into(profileImage)
         }
+
        usermanager.a.asLiveData().observe(this){
            up_address.setText(it)
        }
+
         usermanager.nama.asLiveData().observe(this){
             up_nama.setText(it)
         }
+
         usermanager.umur.asLiveData().observe(this){
             up_umur.setText(it)
         }
+
         usermanager.userName.asLiveData().observe(this){
             up_username.setText(it)
         }
+
         usermanager.pass.asLiveData().observe(this){
             up_pass.setText(it)
         }
-
-
     }
 
     private fun updateData() {
         usermanager = UserManager(this)
-
         var id = ""
         val nama = up_nama.text.toString()
         val pass = up_pass.text.toString()
@@ -113,6 +125,7 @@ class ProfileActvty : AppCompatActivity() {
                     )
                 }
                 startActivity(Intent(this, FilmActvty::class.java))
+                overridePendingTransition(R.anim.fade_in,R.anim.fade_out)
             }.show()
     }
 }
