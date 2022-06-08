@@ -1,15 +1,14 @@
 package and5.abrar.challenge_ch7.view
 
 
+import and5.abrar.challenge_ch7.R
 import and5.abrar.challenge_ch7.datastore.UserManager
 import and5.abrar.challenge_ch7.model.GetDataUserItem
 import and5.abrar.challenge_ch7.viewmodel.ViewModelUser
-import and5.abrar.challenge_ch7.R
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import kotlinx.android.synthetic.main.activity_login_actvty.*
 import kotlinx.coroutines.GlobalScope
